@@ -4,7 +4,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Hemanth', 'leohemanth@gmail.com'),
+     ('Hemanth', 'leohemanth@gmail.com'),
+     ('Lakshman','lakshman8@gmail.com')
 )
 
 MANAGERS = ADMINS
@@ -102,5 +103,7 @@ INSTALLED_APPS = (
 
 )
 
-GRAPPELLI_ADMIN_TITLE = 'My simple ERP Application'
+GRAPPELLI_ADMIN_TITLE = 'My Simple ERP Application - Hemanth'
+
+from local_settings import *
 
