@@ -2,7 +2,9 @@ from django.db import models
 from django.contrib.auth.models import Group, User
 from django.template.defaultfilters import slugify
 
-class Menu(models.Model):
+from mksites.models import SubModel
+
+class Menu(SubModel):
     name = models.SlugField(unique=True)
     parent = models.ForeignKey('self', null=True, blank=True)
     selected_slugs = ()
@@ -44,7 +46,7 @@ class Menu(models.Model):
         return self.name
 
 
-class Category(models.Model):
+class Category(SubModel):
     title = models.CharField(max_length = 100)
     short_title = models.CharField(max_length = 50, unique=True)
     menu = models.ForeignKey(Menu)
@@ -102,7 +104,7 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
-class Article(models.Model):
+class Article(SubModel):
     creation = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length = 100)
@@ -134,7 +136,7 @@ class Article(models.Model):
         models.Model.save(self)
 
 
-class Link(models.Model):
+class Link(SubModel):
     category = models.ForeignKey(Category)
     menu = models.ForeignKey(Menu, null=True, blank=True)
     title = models.CharField(max_length = 100)

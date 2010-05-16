@@ -1,6 +1,7 @@
 from django.db import models
+from mksites.models import SubModel
 
-class CompanyContact(models.Model):
+class CompanyContact(SubModel):
     name = models.CharField(max_length=100)
     phone_number = models.fields.PositiveIntegerField()
     email = models.fields.EmailField()
@@ -10,7 +11,7 @@ class CompanyContact(models.Model):
     def __unicode__(self):
         return self.name
 
-class Company(models.Model):
+class Company(SubModel):
     name = models.CharField(max_length=100)
     details = models.TextField()
     phone_number = models.CharField(max_length=11)
