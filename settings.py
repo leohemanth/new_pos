@@ -118,6 +118,8 @@ GRAPPELLI_ADMIN_TITLE = 'My Simple ERP Application - Hemanth'
 LANGUAGE_CODE = 'en-us'
 BASE_DOMAIN = 'asimpleerp.com'
 
+MAIN_SITE = 'www'
+
 try:
     from local_settings import *
     INSTALLED_APPS+=INSTALLED_APPS_LOCAL
