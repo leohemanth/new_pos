@@ -45,7 +45,7 @@
 	<div class="gradient">
 	{% for art in category.articles %}
 	<h1>{{ art.title }}</h1>
-	{{ art.text  }}
+	{{ art.text|markdown  }}
 	{% endfor %}
 	</div>
 	
