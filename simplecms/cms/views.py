@@ -1,13 +1,13 @@
 #!/usr/local/bin/python
 # -*- coding: utf-8 -*-
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,get_object_or_404
 from models import Menu, Category, Article
 
 def get_path(request, path='home', template='page.html', prefix='/'):
     if path:
-        cat = Category.objects.filter(path=path)
+        cat = Category.objects.filter(path=path,subdomain=request.subdomain)
         if cat.count() == 0:
-            article = Article.objects.get(path=path)
+            article = get_object_or_404(Article,path=path,subdomain=request.subdomain)
             articles = [article,]
             cat = article.parent
             context = {'articles':articles}
@@ -34,10 +34,10 @@ def get_path(request, path='home', template='page.html', prefix='/'):
 
 
 def plan(request, template='plan.html', prefix='/'):
-    categories = Category.objects.filter(parent__isnull=True, order__gt=0).order_by('order')
+    categories = Category.objects.filter(parent__isnull=True, order__gt=0,subdomain=request.subdomain).order_by('order')
     context = {'categories':categories, 'prefix':prefix}
     # root nenus
-    menus = Menu.objects.all()
+    menus = Menu.objects.filter(subdomain=request.subdomain)
     for menu in menus:
         context[menu.name] = menu
     return render_to_response(template, context)

@@ -6,6 +6,7 @@ from os.path import join
 from django.contrib import admin
 admin.autodiscover()
 
+from django.views.generic.simple import redirect_to
 prefix = '/'
 
 urlpatterns = patterns('',
@@ -32,12 +33,9 @@ urlpatterns += patterns('',
                         (r'^media/(.*)', 'django.views.static.serve',
                          {'document_root': 'media',
                           'show_indexes':True}),
-                        #(r'^cms/', 'django.views.static.serve',
-                         #{'document_root': 'cms',
-                          #'show_indexes':True}),
                         )
 
 urlpatterns += patterns('',
-
+    (r'^admin/',redirect_to,{'url':'/erp/',}),
     (r'^(?P<path>.*)/$', 'simplecms.cms.views.get_path', {'template':'lazydays/page.html', 'prefix':prefix}),
 )

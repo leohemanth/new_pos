@@ -46,7 +46,7 @@ class Subdomain(models.Model):
     >>> 
     """
     subdomain_text = models.CharField(max_length = 100, unique = True)
-    domain = models.CharField(null = True, blank = True, max_length = 100, unique = True)
+    domain = models.CharField(null = True, blank = True, max_length = 100)
     name = models.CharField(max_length = 100)
     description = models.TextField()
         
