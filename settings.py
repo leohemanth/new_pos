@@ -22,7 +22,7 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Kolkata'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -54,7 +54,7 @@ PROJECT_ROOT = os.path.dirname(__file__)
 
 MEDIA_ROOT =  os.path.join(PROJECT_ROOT, 'media/')
 ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'admin-media/')
-MEDIA_URL = 'site-media/'
+MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 
@@ -69,20 +69,26 @@ TEMPLATE_LOADERS = (
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.auth",
-    "django.core.context_processors.request",
+    'django.core.context_processors.debug',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
 )
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.doc.XViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
+
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT,'templates')
 )
 
 INSTALLED_APPS = (
@@ -92,7 +98,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'grappelli',
     'django.contrib.admin',
-
+    'simplecms.cms',
+    'simplecms.ext_examples',
+    'django.contrib.markup',
+    
     #Our Apps
     'purchase',
     'tagging',
@@ -100,10 +109,16 @@ INSTALLED_APPS = (
     'company',
     'customer',
     'sale',
-
 )
 
 GRAPPELLI_ADMIN_TITLE = 'My Simple ERP Application - Hemanth'
+# Default language code for this installation. All choices can be found here:
+# http://www.i18nguy.com/unicode/language-identifiers.html
+LANGUAGE_CODE = 'en-us'
 
-from local_settings import *
 
+try:
+    from local_settings import *
+    INSTALLED_APPS+=INSTALLED_APPS_LOCAL
+except:
+    print 'Local not imported'

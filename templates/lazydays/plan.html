@@ -1,0 +1,15 @@
+{% extends "lazydays/page.html" %}
+
+{% block left_menu %}
+{% endblock %}
+
+{% block content %}
+<h1>Site map</h1>
+	{% for cat in categories %}
+	<h2>. {{ cat.title }}</h2>
+		{% for cat2 in cat.children %}
+		<h3> . . . {{ cat2.title }}</h3>
+		{% endfor %}
+	{% endfor %}
+{% endblock %}
+

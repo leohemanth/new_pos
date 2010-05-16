@@ -1,0 +1,70 @@
+{% extends "lazydays/base.html" %}
+
+{% block main_menu %}
+	{% for item in top_bar.categories %}
+		{% if  item.selected  %}
+      		<li><a href="{{ prefix }}{{ item.url }}" title="{{ item.title }}" class="here">{{ item.short_title }}</a></li>
+		{% else %}
+      		<li><a href="{{ prefix }}{{ item.url }}" title="{{ item.title }}">{{ item.short_title }}</a></li>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+
+{% block left_menu %}
+  <h1>{{ left_menu.parent_cat_selected.title }}</h1>
+
+
+  <ul class="sideMenu">
+  {% for item in left_menu.categories %}
+	{% if  item.selected  %}
+  		<li class="here"><a href="{{ prefix }}{{ item.url }}" title="{{ item.title }}">{{ item.short_title }}</a></li>
+	{% else %}
+  		<li><a href="{{ prefix }}{{ item.url }}" title="{{ item.title }}">{{ item.short_title }}</a></li>
+	{% endif %}
+  {% endfor %}
+  {% if user.is_superuser %}
+  <p>
+  <li><i><a href=/cms/admin/ target="admin">admin console</a></i></li>
+  </p>
+  {% endif %}
+  </ul>
+  <p>
+  <a href=http://www.djangoproject.com/ target="django"><img src="{{MEDIA_URL}}/images/djangomade124x25_grey.gif"></a>
+  </p>
+{% endblock %}
+
+{% load markup %}
+{% block content %}
+	<div class="gradient">
+	{% for art in category.main_articles %}
+	<h1>{{ art.title }}</h1>
+	{{ art.text }}
+	{% endfor %}
+	</div>
+	
+	<div class="gradient">
+	{% for art in category.articles %}
+	<h1>{{ art.title }}</h1>
+	{{ art.text  }}
+	{% endfor %}
+	</div>
+	
+	{% if not category.main_articles and not category.articles %}
+	<div class="gradient">
+	<blockquote>
+	  <p>
+	  There is no data to display.
+	  </p>
+	</blockquote>
+	</div>
+	{% endif %}
+	
+{% endblock %}
+
+
+{% block footer_right %}
+    <a href="{{ prefix }}plan" title="map">Site map</a> <span class="grey">|</span>
+	{% for item in top_bar.categories %}
+        <a href="{{ prefix }}{{ item.url }}" title="{{ item.title }}">{{ item.short_title }}</a> <span class="grey">|</span>
+	{% endfor %}
+{% endblock %}
