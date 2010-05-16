@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     (r'^$', 'simplecms.cms.views.get_path', {'template':'lazydays/page.html', 'prefix':prefix}),
+    url(r'^new/$', 'mksites.views.create_subdomain',name='new_sub'),
     (r'^plan/$', 'simplecms.cms.views.plan', {'template':'lazydays/plan.html', 'prefix':prefix}),
 )
 

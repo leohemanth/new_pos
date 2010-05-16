@@ -77,8 +77,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.doc.XViewMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    'subdomains.middleware.GetSubdomainMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -98,9 +97,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'grappelli',
     'django.contrib.admin',
+    'django.contrib.markup',
+    'subdomains',
+    #'mksites',
     'simplecms.cms',
     'simplecms.ext_examples',
-    'django.contrib.markup',
     
     #Our Apps
     'purchase',
@@ -115,7 +116,7 @@ GRAPPELLI_ADMIN_TITLE = 'My Simple ERP Application - Hemanth'
 # Default language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
-
+BASE_DOMAIN = 'asimpleerp.com'
 
 try:
     from local_settings import *

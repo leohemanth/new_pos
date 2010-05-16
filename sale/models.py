@@ -1,5 +1,5 @@
 from django.db import models
-
+from mksites.models import SubModel
 
 
 class SaleInvoice(models.Model):

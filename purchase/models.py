@@ -1,5 +1,5 @@
 from django.db import models
-
+from mksites.models import SubModel
 
 class PurchaseInvoice(models.Model):
     company = models.ForeignKey('company.Company')

@@ -1,12 +1,13 @@
 from django.contrib import admin
 from purchase.models import *
+from mksites.admin import SubdomainAdmin
 
-class Paymentadmin(admin.ModelAdmin):
+class Paymentadmin(SubdomainAdmin):
    list_display = ('mode','description','invoice')
    list_filter = ('mode','description','invoice')
 
 
-class PurchaseInvoiceItemadmin(admin.ModelAdmin):
+class PurchaseInvoiceItemadmin(SubdomainAdmin):
    list_display = ('invoice','product','quantity','price')
    list_filter = ('invoice','product')
      
@@ -15,7 +16,7 @@ class PurchaseItemsInline(admin.TabularInline):
    model = PurchaseInvoiceItem
     
 
-class PurchaseInvoiceadmin(admin.ModelAdmin): 
+class PurchaseInvoiceadmin(SubdomainAdmin): 
    inlines = [PurchaseItemsInline,]
    list_filter = ('company','datetime')
    list_display = ('company','datetime')
