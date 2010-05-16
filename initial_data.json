@@ -1,0 +1,581 @@
+[
+  {
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+      "username": "admin", 
+      "first_name": "", 
+      "last_name": "", 
+      "is_active": true, 
+      "is_superuser": true, 
+      "is_staff": true, 
+      "last_login": "2008-06-07 17:34:06", 
+      "groups": [], 
+      "user_permissions": [], 
+      "password": "sha1$ae9d0$8a3c48c2595a754743942e6101bb5b2bd6f441ee", 
+      "email": "your_email@domain.com", 
+      "date_joined": "2008-04-28 22:11:24"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "Asia countries", 
+      "menu": 1, 
+      "short_title": "Asia", 
+      "order": 3, 
+      "role": null, 
+      "template_name": "", 
+      "path": "asia", 
+      "slug": "asia"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "Main home bloc Title", 
+      "menu": 4, 
+      "short_title": "Main home bloc", 
+      "order": 0, 
+      "role": null, 
+      "template_name": "", 
+      "path": null, 
+      "slug": "main_bloc"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "Footer", 
+      "menu": 5, 
+      "short_title": "footer", 
+      "order": 0, 
+      "role": null, 
+      "template_name": "", 
+      "path": "footer", 
+      "slug": "footer"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "Africa countries", 
+      "menu": 1, 
+      "short_title": "Africa", 
+      "order": 2, 
+      "role": null, 
+      "template_name": "", 
+      "path": "africa", 
+      "slug": "africa"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 13, 
+      "title": "Germany towns", 
+      "menu": 2, 
+      "short_title": "Germany", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "europe\/germany", 
+      "slug": "germany"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 13, 
+      "title": "Italia towns", 
+      "menu": 2, 
+      "short_title": "Italia", 
+      "order": 3, 
+      "role": null, 
+      "template_name": "", 
+      "path": "europe\/italia", 
+      "slug": "italia"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 13, 
+      "title": "France towns", 
+      "menu": 2, 
+      "short_title": "France", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "europe\/france", 
+      "slug": "france"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "Europe countries", 
+      "menu": 1, 
+      "short_title": "Europe", 
+      "order": 4, 
+      "role": null, 
+      "template_name": "", 
+      "path": "europe", 
+      "slug": "europe"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "North America countries", 
+      "menu": 1, 
+      "short_title": "North America", 
+      "order": 5, 
+      "role": null, 
+      "template_name": "", 
+      "path": "namerica", 
+      "slug": "namerica"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "About SimpleCMS", 
+      "menu": 1, 
+      "short_title": "About", 
+      "order": 7, 
+      "role": null, 
+      "template_name": "", 
+      "path": "about", 
+      "slug": "about"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 15, 
+      "title": "Writing Extensions", 
+      "menu": 2, 
+      "short_title": "Extensions", 
+      "order": 2, 
+      "role": null, 
+      "template_name": "", 
+      "path": "about\/extensions", 
+      "slug": "extensions"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 15, 
+      "title": "Writing templates", 
+      "menu": 2, 
+      "short_title": "Templates", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "about\/templates", 
+      "slug": "templates"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 15, 
+      "title": "About Lazydays design", 
+      "menu": 2, 
+      "short_title": "Lazydays Design", 
+      "order": 5, 
+      "role": null, 
+      "template_name": "", 
+      "path": "about\/lddesign", 
+      "slug": "lddesign"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": null, 
+      "title": "Home", 
+      "menu": 1, 
+      "short_title": "Home", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "home", 
+      "slug": "home"
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 8, 
+      "title": "Morocco towns", 
+      "menu": 2, 
+      "short_title": "Morocco", 
+      "order": 2, 
+      "role": null, 
+      "template_name": "", 
+      "path": "africa\/morocco", 
+      "slug": "morocco"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 8, 
+      "title": "Senegal towns", 
+      "menu": 2, 
+      "short_title": "Senegal", 
+      "order": 3, 
+      "role": null, 
+      "template_name": "", 
+      "path": "africa\/senegal", 
+      "slug": "senegal"
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 1, 
+      "title": "China towns", 
+      "menu": 2, 
+      "short_title": "China", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "asia\/china", 
+      "slug": "china"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 1, 
+      "title": "India towns", 
+      "menu": 2, 
+      "short_title": "India", 
+      "order": 2, 
+      "role": null, 
+      "template_name": "", 
+      "path": "asia\/india", 
+      "slug": "india"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 14, 
+      "title": "Canada towns", 
+      "menu": 2, 
+      "short_title": "Canada", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "namerica\/canada", 
+      "slug": "canada"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 14, 
+      "title": "USA states", 
+      "menu": 2, 
+      "short_title": "USA", 
+      "order": 2, 
+      "role": null, 
+      "template_name": "", 
+      "path": "namerica\/usa", 
+      "slug": "usa"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "cms.category", 
+    "fields": {
+      "parent": 20, 
+      "title": "The SimpleCMS demo", 
+      "menu": 2, 
+      "short_title": "Demo", 
+      "order": 1, 
+      "role": null, 
+      "template_name": "", 
+      "path": "home\/demo", 
+      "slug": "demo"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "cms.menu", 
+    "fields": {
+      "name": "top_bar", 
+      "parent": null
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "cms.menu", 
+    "fields": {
+      "name": "left_menu", 
+      "parent": 1
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "cms.menu", 
+    "fields": {
+      "name": "right_menu", 
+      "parent": null
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "cms.menu", 
+    "fields": {
+      "name": "home_blocs", 
+      "parent": null
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "cms.menu", 
+    "fields": {
+      "name": "footer", 
+      "parent": null
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "cms.menu", 
+    "fields": {
+      "name": "blog", 
+      "parent": null
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "cms.link", 
+    "fields": {
+      "category": 7, 
+      "menu": 5, 
+      "url": "\/plan", 
+      "title": "Plan du site"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "cms.link", 
+    "fields": {
+      "category": 7, 
+      "menu": 5, 
+      "url": "\/contact", 
+      "title": "Contact"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "cms.link", 
+    "fields": {
+      "category": 7, 
+      "menu": 5, 
+      "url": "\/admin", 
+      "title": "Acc\u00e8s membres"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 5, 
+      "updated": "2008-05-09 16:29:42", 
+      "author": 1, 
+      "title": "Article for the main bloc in home page", 
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\r\nMauris magna. Suspendisse accumsan elit non tellus. Curabitur eros justo, malesuada convallis, sagittis vitae, convallis sit amet, lectus. Fusce tristique mattis ante.\r\nAenean facilisis euismod dui.", 
+      "creation": "2008-05-08 23:55:44", 
+      "path": null, 
+      "slug": "main"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 12, 
+      "updated": "2008-06-07 22:08:46", 
+      "author": 1, 
+      "title": "Quelques villes de france", 
+      "text": "<dl>\r\n<dt>Talence\r\n  <dd> J'habite ici\r\n<dt>Montpellier\r\n  <dd> Je suis n\u00e9 l\u00e0-bas\r\n<dt>Grenoble\r\n  <dd> J'y ai fait une partie de mes \u00e9tudes\r\n<dt>Dax\r\n  <dd> J'y vais souvent\r\n<dt>La Clusaz\r\n  <dd> J'y vais en \u00e9t\u00e9 et en hiver\r\n<dt>Cauterets\r\n  <dd> J'y vais en hiver\r\n<dt>Paris\r\n  <dd> J'y vais de temps en temps\r\n<\/dl>", 
+      "creation": "2008-06-04 14:37:49", 
+      "path": "france", 
+      "slug": "france"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 15, 
+      "updated": "2008-06-05 17:11:43", 
+      "author": 1, 
+      "title": "What is SimpleCMS ?", 
+      "text": "## ASAP: As Simple As Possible ##\r\n\r\nThe basic principles are as follows:\r\n\r\n* Using the standard **admin application** for editing\r\n* No middleware\r\n* Navigation through menus organized hierarchically\r\n* It should be easy to write or adapt templates\r\n\r\n## Simple But Extensible ##\r\n\r\n* Simple CMS provides little, but it allows you to easily add your stuff.\r\n* Simple CMS provides Articles linked to Categories: your can link anything you want to Categories \r\n\r\n##  Data model ##\r\n\r\n![Simple CMS Data model](\/images\/cms.png)", 
+      "creation": "2008-06-04 22:30:33", 
+      "path": "simplecms", 
+      "slug": "simplecms"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 18, 
+      "updated": "2008-06-05 17:23:49", 
+      "author": 1, 
+      "title": "About Lazydays design", 
+      "text": "## Thanks to ... ##\r\n\r\n* [oswd](http:\/\/www.oswd.org\/) for his open source web designs\r\n* [fullahead](http:\/\/fullahead.org\/) for this design", 
+      "creation": "2008-06-05 17:23:49", 
+      "path": "aboutldd", 
+      "slug": "aboutldd"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 17, 
+      "updated": "2008-06-07 22:49:41", 
+      "author": 1, 
+      "title": "How to write templates ?", 
+      "text": "## All data come from menus ##\r\n\r\n* if you create a menu which name is *my_menu*, you may list categories linked to this menu with\r\n*{% for cat in my_menu.categories  %}*\r\n\r\n* if *my_menu* has a parent, *my_menu.categories* list only categories whose parent is linked to the parent menu.\r\n\r\n## Some useful attributes\/methods for writing templates ##\r\n\r\n### menu objects ###\r\n<dl>\r\n<dt>categories\r\n  <dd> list of categories (order > 0)\r\n<dt>main_categories\r\n  <dd> list of categories (order = 0)\r\n<dt>parent_cat_selected\r\n  <dd> selected category in parent menu\r\n<dt>links\r\n  <dd> links\r\n<\/dl>\r\n\r\n### category objects ###\r\n\r\n* title\r\n* short_title\r\n* selected\r\n* articles\r\n* main_articles\r\n* links\r\n* parent\r\n* url\r\n* children\r\n\r\n### article objects ###\r\n* creation\r\n* updated\r\n* title\r\n* category\r\n* author\r\n* summary\r\n* url", 
+      "creation": "2008-06-05 18:09:27", 
+      "path": "howtotemplates", 
+      "slug": "howtotemplates"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 1, 
+      "updated": "2008-06-05 18:32:52", 
+      "author": 1, 
+      "title": "Style demo 1", 
+      "text": "This article is a demo that displays some styles. You can use html code and\/or\r\n[Markdown](http:\/\/daringfireball.net\/projects\/markdown\/syntax) syntax. \r\nTo use Markdown:\r\n\r\n1. install the python markdown module\r\n1. put *{% load markup %}* in your template\r\n1. use markdown filter like this: *{{ article.text|markdown }}*\r\n\r\n<h2>Heading 2<\/h2>\r\n<h3>Heading 3<\/h3>\r\n<h4>Heading 4<\/h4>\r\n<h5>Heading 5<\/h5>\r\n<h6>Heading 6<\/h6>\r\n<p>\r\n  A <a href=\"http:\/\/tastydrop.com\" title=\"Shameless....\">link<\/a>, <acronym title=\"this really isn't a very good description\">acronym<\/acronym> and <del>deleted text<\/del>.\r\n<\/p>\r\n<blockquote>\r\n  <p>\r\n    This is a default blockquote with author information included.  If you look at the source, you can see the author info gets its style from a combination of generic classes.<span class=\"block small grey\"><a href=\"http:\/\/fullahead.org\/contact.html\" title=\"Contact snop\">snop<\/a> on March 19th, 2006<\/span>\r\n  <\/p>\r\n<\/blockquote>\r\n<blockquote class=\"go\">\r\n  <p>\r\n    This is a blockquote with the <i>go<\/i> class.\r\n  <\/p>\r\n<\/blockquote>\r\n<blockquote class=\"exclamation\">\r\n  <p>\r\n    This is a blockquote with the <i>exclamation<\/i> class.\r\n  <\/p>\r\n<\/blockquote>\r\n<blockquote class=\"stop\">\r\n  <p>\r\n    This is a blockquote with the <i>stop<\/i> class.\r\n  <\/p>\r\n<\/blockquote>\r\n<code><span class=\"green\">\/* Code block *\/<\/span><br\/>System.out.println(\"someone set us up the bomb\");<\/code>\r\n\r\n<dl>\r\n  <dt>\r\n    Definition List\r\n  <\/dt>\r\n  <dd>\r\n    Can be used for all your definition list needs.\r\n  <\/dd>\r\n  <dt>\r\n    Muffins\r\n  <\/dt>\r\n  <dd>\r\n    Tasty breakfast treat.\r\n  <\/dd>\r\n<\/dl>\r\n\r\n<ul>\r\n  <li>Unordered List<\/li>\r\n  <li>Uses a custom bullet to make items pop<\/li>\r\n<\/ul>\r\n\r\n<ol>\r\n  <li><span>Ordered List<\/span><\/li>\r\n  <li><span>Uses a &lt;span&gt; tag to style the numbers<\/span><\/li>\r\n<\/ol>\r\n", 
+      "creation": "2008-06-05 18:23:39", 
+      "path": "styledemo1", 
+      "slug": "styledemo1"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 20, 
+      "updated": "2008-06-06 17:47:10", 
+      "author": 1, 
+      "title": "Simple CMS", 
+      "text": "This site is a demo of the **SimpleCMS** django project.\r\n\r\nKey features:\r\n\r\n* standard admin application used for edition\r\n* hierarchical data organisation with categories and articles models\r\n* navigation through hierarchical menus\r\n* simplicity, no middleware\r\n* writing templates and extensions easily\r\n\r\n[learn more ...](..\/about)", 
+      "creation": "2008-06-06 17:47:10", 
+      "path": "simplecms", 
+      "slug": "simplecms"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 8, 
+      "updated": "2008-06-07 17:41:29", 
+      "author": 1, 
+      "title": "Some africa countries", 
+      "text": "You can select a country of Africa in the left menu.\r\n\r\n## this is a header 2 title ##\r\nThis article wad edited in the admin application; the Markdown syntax was used\r\n[as you can see here](\/cms\/admin\/cms\/article\/10).", 
+      "creation": "2008-06-07 17:37:00", 
+      "path": "africa", 
+      "slug": "africa"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 21, 
+      "updated": "2008-06-07 17:45:05", 
+      "author": 1, 
+      "title": "Some Morocco towns", 
+      "text": "Some towns in Morocco I have visited:\r\n\r\n* Rabat\r\n* Marakech\r\n* Fez\r\n* Casablanca", 
+      "creation": "2008-06-07 17:44:05", 
+      "path": "morocco", 
+      "slug": "morocco"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 27, 
+      "updated": "2008-06-07 17:50:27", 
+      "author": 1, 
+      "title": "This site is a demo", 
+      "text": "This site is a demo for the [Simple CMS](http:\/\/code.google.com\/p\/django-simplecms\/)\r\ndjango project.\r\n\r\nYou can navigate by selecting an item, in the top bar or in the left menu.\r\n\r\n## header 2\r\n\r\n### header 3\r\n\r\n#### header 4\r\n\r\n##### header 5", 
+      "creation": "2008-06-07 17:49:19", 
+      "path": "demo", 
+      "slug": "demo"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 9, 
+      "updated": "2008-06-07 22:02:35", 
+      "author": 1, 
+      "title": "Germany towns", 
+      "text": "I have never been there. Some towns in Germany:\r\n\r\n* Berlin\r\n* Munchen\r\n* Frankfurt\r\n* Hamburg\r\n\r\n<dl>\r\n<dt>definition list\r\n<dd>definition list\r\n<\/dl>", 
+      "creation": "2008-06-07 21:59:40", 
+      "path": "germany", 
+      "slug": "germany"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "cms.article", 
+    "fields": {
+      "category": 10, 
+      "updated": "2008-06-07 22:17:51", 
+      "author": 1, 
+      "title": "Some towns in Italia", 
+      "text": "Some italian towns I have been in:\r\n\r\n* Roma\r\n* Firenza\r\n* Napoli\r\n* Venice", 
+      "creation": "2008-06-07 22:17:51", 
+      "path": "italia", 
+      "slug": "italia"
+    }
+  }
+]
