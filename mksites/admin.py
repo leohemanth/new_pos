@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.http import Http404
 
 class SubdomainAdmin(admin.ModelAdmin):
     def queryset(self, request):
@@ -8,7 +9,8 @@ class SubdomainAdmin(admin.ModelAdmin):
         """
         qs = super(SubdomainAdmin, self).queryset(request)
         if request.main_site and request.user.is_superuser:
-            print 'yay, all records'
             return qs
-        print 'Umm subset'
-        return qs.filter(subdomain=request.subdomain)
+        elif request.user.is_superuser or request.subdomain.user == request.user:
+            return qs.filter(subdomain=request.subdomain)
+        else:
+            raise Http404()

@@ -57,8 +57,9 @@ class Subdomain(models.Model):
     objects = SubdomainManager()
     
     def get_absolute_url(self):
-        current_site = Site.objects.get_current()
-        return 'http://%s.%s' % (self.subdomain, current_site.domain)
+        from django.conf import settings
+        current_site = settings.BASE_DOMAIN
+        return 'http://%s.%s/' % (self.subdomain_text, current_site)
     
     def get_settings(self):
         """
