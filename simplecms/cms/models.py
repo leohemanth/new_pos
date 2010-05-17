@@ -5,11 +5,14 @@ from django.template.defaultfilters import slugify
 from mksites.models import SubModel
 
 class Menu(SubModel):
-    name = models.SlugField(unique=True)
+    name = models.SlugField()
     parent = models.ForeignKey('self', null=True, blank=True)
     selected_slugs = ()
     parent_cat_selected = None
 
+    class Meta:
+        unique_together = (("subdomain", "name"),)
+    
     def update_selection(self, slugs):
         u"""update self.parent_cat_selected
         """
@@ -48,11 +51,11 @@ class Menu(SubModel):
 
 class Category(SubModel):
     title = models.CharField(max_length = 100)
-    short_title = models.CharField(max_length = 50, unique=True)
+    short_title = models.CharField(max_length = 50)
     menu = models.ForeignKey(Menu)
     order = models.SmallIntegerField(null=True, blank=True,
                                      help_text='0: main - <0: disabled')
-    slug = models.SlugField(null=True, blank=True, unique=True, help_text='generated if not filled')
+    slug = models.SlugField(null=True, blank=True, help_text='generated if not filled')
     path = models.CharField(max_length = 200, null=True, blank=True, help_text='should be generated')
     parent = models.ForeignKey('self', null=True, blank=True)
     template_name = models.CharField(max_length = 100, null=True, blank=True)
@@ -62,6 +65,10 @@ class Category(SubModel):
     def select(self):
         self.selected = True
 
+    class Meta:
+        unique_together = (("subdomain", "short_title"),)
+
+        
     def get_root(self):
         root = self
         while root.parent:

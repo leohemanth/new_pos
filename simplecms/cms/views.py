@@ -9,7 +9,7 @@ def get_path(request, path='home', template='page.html', prefix='/'):
         if cat.count() == 0:
             article = get_object_or_404(Article,path=path,subdomain=request.subdomain)
             articles = [article,]
-            cat = article.parent
+            cat = article.category
             context = {'articles':articles}
         else:
             cat = cat[0]

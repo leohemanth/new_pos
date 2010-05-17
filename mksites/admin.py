@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.http import Http404
-from debug import ipython,idebug
 
 class SubdomainAdmin(admin.ModelAdmin):
     

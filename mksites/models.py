@@ -14,3 +14,5 @@ class SubModel(models.Model):
     
     class Meta:
         abstract = True
+        
+    

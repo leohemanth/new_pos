@@ -9,12 +9,12 @@ class SubdomainUserForm(UserCreationForm):
     def clean(self):
         subdomain_value = self.cleaned_data['username']
         if subdomain_value=='www':
-            raise forms.ValidationError('This Subdomain cannot be registered')
+            raise forms.ValidationError('This subdomain cannot be registered')
         try:
             Subdomain.objects.get(subdomain_text=subdomain_value)
         except Subdomain.DoesNotExist:
             return self.cleaned_data
-        raise forms.ValidationError('This Subdomain cannot be registered')
+        raise forms.ValidationError('This subdomain cannot be registered')
     
     def save(self,**kwargs):
         user = super(SubdomainUserForm,self).save(**kwargs)
@@ -28,6 +28,8 @@ class SubdomainUserForm(UserCreationForm):
                                                              name=cd['subdomain_title'],
                                                              description = "Descriptions",
                                                              user = user)
+        subdomain.save()
+        auto_create_menus(subdomain,user)
         return username,password,subdomain
     
     
@@ -46,3 +48,19 @@ def autopopulate_data():
             pass
     except:
         pass
+
+    
+def auto_create_menus(subdomain,user):
+    from simplecms.cms.models import Menu, Article, Category
+    menus = Menu.objects.filter(subdomain=None)
+    menu_objects = []
+    for el in menus:
+        menu_objects.append(Menu.objects.create(subdomain=subdomain,name=el.name))
+    scat = Category(menu=menu_objects[0], title='Sample Category', subdomain=subdomain,
+                    slug='sample-category',path='sample',short_title='Sample')
+    scat.save()
+    from django.contrib.auth.models import User
+    a = Article(author=user, path='home', slug='main', subdomain=subdomain, text='This is an empty sample article. Please edit or change this in the erp',
+                title='Home Page',category=scat)
+    a.save()
+    
