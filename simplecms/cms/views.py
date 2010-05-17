@@ -37,7 +37,7 @@ def plan(request, template='plan.html', prefix='/'):
     categories = Category.objects.filter(parent__isnull=True, order__gt=0,subdomain=request.subdomain).order_by('order')
     context = {'categories':categories, 'prefix':prefix}
     # root nenus
-    menus = Menu.objects.filter(subdomain=request.subdomain)
+    menus = Menu.objects.all()
     for menu in menus:
         context[menu.name] = menu
     return render_to_response(template, context)

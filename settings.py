@@ -120,8 +120,3 @@ BASE_DOMAIN = 'asimpleerp.com'
 
 MAIN_SITE = 'www'
 
-try:
-    from local_settings import *
-    INSTALLED_APPS+=INSTALLED_APPS_LOCAL
-except:
-    print 'Local not imported'
