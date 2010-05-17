@@ -28,6 +28,8 @@ TIME_ZONE = 'Asia/Kolkata'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
+FIXTURE_DIRS = 'fixtures'
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -77,6 +79,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
     'subdomains.middleware.GetSubdomainMiddleware',
 )
 
@@ -99,9 +102,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.markup',
     'subdomains',
-    #'mksites',
+    #'django.contrib.flatpages'
+    'mksites',
     'simplecms.cms',
     'simplecms.ext_examples',
+    
     
     #Our Apps
     'purchase',
