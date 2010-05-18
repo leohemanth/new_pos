@@ -6,7 +6,8 @@ class SubdomainAdmin(admin.ModelAdmin):
     exclude = ('subdomain',)
 
     def queryset(self,request):
-        return get_queryset(request)
+        qs = super(SubdomainAdmin, self).queryset(request)
+        return get_queryset(request,qs)
         
     def formfield_for_foreignkey(self, db_field, request=None, **kwargs):
         the_model = db_field.related.parent_model
@@ -24,12 +25,11 @@ class SubdomainAdmin(admin.ModelAdmin):
         
         
         
-def get_queryset(request):
+def get_queryset(request,qs):
     """
     Filter the objects displayed in the change_list to only
     display those for the currently signed in user.
     """
-    qs = super(SubdomainAdmin, self).queryset(request)
     #Super user going to asimpleerp.com/admin displays all entries
     if request.mainsite and request.user.is_superuser:
         return qs
