@@ -4,19 +4,9 @@ from django.http import Http404
 class SubdomainAdmin(admin.ModelAdmin):
     
     exclude = ('subdomain',)
-    
-    def queryset(self, request):
-        """
-        Filter the objects displayed in the change_list to only
-        display those for the currently signed in user.
-        """
-        qs = super(SubdomainAdmin, self).queryset(request)
-        if request.main_site and request.user.is_superuser:
-            return qs
-        elif request.user.is_superuser or request.subdomain.user == request.user:
-            return qs.filter(subdomain=request.subdomain)
-        else:
-            raise Http404
+
+    def queryset(self,request):
+        return get_queryset(request)
         
     def formfield_for_foreignkey(self, db_field, request=None, **kwargs):
         the_model = db_field.related.parent_model
@@ -29,3 +19,22 @@ class SubdomainAdmin(admin.ModelAdmin):
         if not change:
             obj.subdomain = request.subdomain
         obj.save()
+
+        
+        
+        
+        
+def get_queryset(request):
+    """
+    Filter the objects displayed in the change_list to only
+    display those for the currently signed in user.
+    """
+    qs = super(SubdomainAdmin, self).queryset(request)
+    #Super user going to asimpleerp.com/admin displays all entries
+    if request.mainsite and request.user.is_superuser:
+        return qs
+    #Super user or subdomain user going to their subdomain shows their entries
+    elif request.subdomain and (request.user.is_superuser or request.subdomain.user == request.user):
+        return qs.filter(subdomain=request.subdomain)
+    else:
+        raise Http404
