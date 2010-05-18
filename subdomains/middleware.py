@@ -14,8 +14,10 @@ class GetSubdomainMiddleware:
             request.subdomain_text = bits[0]
             try:
                 subdomain = Subdomain.objects.get(subdomain_text = request.subdomain_text)
+                request.mainsite = False
             except Subdomain.DoesNotExist:
                 subdomain = None
+                request.mainsite = False
                 print 'Invalid Subdomain'
         else:
             subdomain = None
@@ -23,4 +25,4 @@ class GetSubdomainMiddleware:
             print 'Ah, sizeof url is bigger than expected'
         request.subdomain = subdomain
         print 'Subdomain %s'%subdomain
-                
+        
