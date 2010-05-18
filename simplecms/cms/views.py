@@ -4,6 +4,8 @@ from django.shortcuts import render_to_response,get_object_or_404
 from models import Menu, Category, Article
 
 def get_path(request, path='home', template='page.html', prefix='/'):
+    #from debug import idebug
+    #idebug()
     if path:
         cat = Category.objects.filter(path=path,subdomain=request.subdomain)
         if cat.count() == 0:
@@ -24,7 +26,7 @@ def get_path(request, path='home', template='page.html', prefix='/'):
         context = {}
         select_list = ()
     # root nenus
-    menus = Menu.objects.all()
+    menus = Menu.objects.filter(subdomain=request.subdomain)
     for menu in menus:
         menu.update_selection(select_list)
         context[menu.name] = menu
