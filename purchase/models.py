@@ -1,7 +1,7 @@
 from django.db import models
 from mksites.models import SubModel
 
-class PurchaseInvoice(models.Model):
+class PurchaseInvoice(SubModel):
     company = models.ForeignKey('company.Company')
     datetime = models.DateTimeField()
 
@@ -9,7 +9,7 @@ class PurchaseInvoice(models.Model):
         return str(self.id)
 
 
-class Payment(models.Model):
+class Payment(SubModel):
     mode_choices = ((1,'Cheque'),
                     (2,'Cash'),
                     (3,'DD'))
@@ -21,7 +21,7 @@ class Payment(models.Model):
         return str(self.mode)
 
 
-class PurchaseInvoiceItem(models.Model):
+class PurchaseInvoiceItem(SubModel):
     invoice = models.ForeignKey(PurchaseInvoice)
     product = models.ForeignKey('product.Product')
     quantity = models.PositiveSmallIntegerField()

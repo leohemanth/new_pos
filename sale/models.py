@@ -2,7 +2,7 @@ from django.db import models
 from mksites.models import SubModel
 
 
-class SaleInvoice(models.Model):
+class SaleInvoice(SubModel):
     customer = models.ForeignKey('customer.Customer')
     datetime = models.DateTimeField(auto_now=True)
     
@@ -10,7 +10,7 @@ class SaleInvoice(models.Model):
         return str(self.pk)
 
     
-class SaleInvoiceItem(models.Model):
+class SaleInvoiceItem(SubModel):
     invoice = models.ForeignKey(SaleInvoice)
     product = models.ForeignKey('product.Product')
     quantity = models.PositiveSmallIntegerField()

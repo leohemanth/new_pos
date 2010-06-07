@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.http import Http404
 
 class SubdomainAdmin(admin.ModelAdmin):
-    if not request.user.is_superuser:
-        exclude = ('subdomain',)
+
+    exclude = ('subdomain',)
 
     def queryset(self,request):
         qs = super(SubdomainAdmin, self).queryset(request)
