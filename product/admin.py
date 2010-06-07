@@ -10,7 +10,12 @@ class Categoryadmin(SubdomainAdmin):
 
 
 class Productadmin(SubdomainAdmin):
-    list_display = ('name','description','shortcut','category','image')
+    def thumbnail(self,url):
+        return """<img src="%s" />""" %("http://asimpleerp.com/media/"+str(url.image))
+    
+    thumbnail.allow_tags = True
+    list_display = ('name','description','shortcut','category','thumbnail','image')
+
     list_filter = ('name','description','shortcut','category')
     search_fields = ['name','description','shortcut']
 
