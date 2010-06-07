@@ -3,6 +3,7 @@ from django.http import Http404
 
 class SubdomainAdmin(admin.ModelAdmin):
 
+    exclude = ('subdomain',)
 
     def queryset(self,request):
         qs = super(SubdomainAdmin, self).queryset(request)

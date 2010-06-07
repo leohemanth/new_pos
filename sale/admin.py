@@ -3,6 +3,8 @@ from mksites.admin import SubdomainAdmin
 from sale.models import *
 
 class SaleItemsInline(admin.TabularInline):
+    exclude = ('subdomain',)
+
     model = SaleInvoiceItem
 
 class SaleInvoiceadmin(SubdomainAdmin):

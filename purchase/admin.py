@@ -8,7 +8,9 @@ class Paymentadmin(SubdomainAdmin):
 
 
 class PurchaseItemsInline(admin.TabularInline):
-   model = PurchaseInvoiceItem
+        exclude = ('subdomain',)
+
+	model = PurchaseInvoiceItem
     
 
 class PurchaseInvoiceadmin(SubdomainAdmin): 

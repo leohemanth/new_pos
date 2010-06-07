@@ -4,7 +4,7 @@ from mksites.models import SubModel
 class PurchaseInvoice(SubModel):
     company = models.ForeignKey('company.Company')
     datetime = models.DateTimeField()
-
+    invoiceno = models.CharField(max_length=20)
     def __unicode__(self):
         return str(self.id)
 
