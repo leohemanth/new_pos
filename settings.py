@@ -110,7 +110,6 @@ INSTALLED_APPS = (
     
     #Our Apps
     'purchase',
-    'tagging',
     'product',
     'company',
     'customer',
