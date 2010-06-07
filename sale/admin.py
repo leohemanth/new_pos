@@ -12,4 +12,3 @@ class SaleInvoiceadmin(SubdomainAdmin):
     search_fields = ['customer',]
 
 admin.site.register(SaleInvoice,SaleInvoiceadmin)
-admin.site.register(SaleInvoiceItem)
