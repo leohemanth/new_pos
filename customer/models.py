@@ -8,6 +8,7 @@ class Customer(SubModel):
     phone_number = models.fields.PositiveIntegerField()
     email = models.fields.EmailField()
     Category = models.ForeignKey('CustomerCategory')
+    image = models.ImageField(upload_to="media/images",blank=True,null=True)
     def __unicode__(self):
         return self.name
 

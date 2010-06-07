@@ -18,8 +18,3 @@ class CategoryAdmin(SubdomainAdmin):
     list_display = ('short_title', 'title', 'menu', 'order', 'parent')
     list_filter = ('menu', 'parent')
 admin.site.register(Category, CategoryAdmin)
-
-
-class LinkAdmin(SubdomainAdmin):
-    list_display = ('title', 'menu', 'category', 'url')
-admin.site.register(Link, LinkAdmin)

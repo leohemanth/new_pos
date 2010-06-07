@@ -7,6 +7,7 @@ class CompanyContact(SubModel):
     email = models.fields.EmailField()
     description = models.TextField()
     company = models.ForeignKey('Company')
+    image = models.ImageField(upload_to="media/images",blank=True,null=True)
 
     def __unicode__(self):
         return self.name
