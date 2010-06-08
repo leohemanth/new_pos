@@ -111,6 +111,7 @@ INSTALLED_APPS = (
     #Our Apps
     'purchase',
     'product',
+    'contact',
     'company',
     'customer',
     'sale',
@@ -125,7 +126,7 @@ BASE_DOMAIN = 'asimpleerp.com'
 MAIN_SITE = 'www'
 
 try:
-    from local_settings import *
-    INSTALLED_APPS+=INSTALLED_APPS_LOCAL
+	from local_settings import *
+	INSTALLED_APPS+=INSTALLED_APPS_LOCALS
 except:
-    print 'Local not imported'
+	print 'local not imported'

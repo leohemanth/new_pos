@@ -3,7 +3,11 @@ from customer.models import *
 from mksites.admin import SubdomainAdmin
 
 class Customeradmin(SubdomainAdmin):
-     list_display = ('name','phone_number','details')
+	def thumbnail(self,url):
+            return """<img src="%s" />""" %("http://asimpleerp.com/media/"+str(url.image))
+    
+	thumbnail.allow_tags = True
+	list_display = ('name','phone_number','details','thumbnail','image')
 
 class Categoryadmin(SubdomainAdmin):
      list_display = ('name','description')
